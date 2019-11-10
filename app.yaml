@@ -1,0 +1,3 @@
+service: bot-dofus-orchestrator
+runtime: custom
+env: flex

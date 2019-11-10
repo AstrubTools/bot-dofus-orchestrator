@@ -1,0 +1,43 @@
+version: 2.1
+
+executors:
+  rust-nightly-executor:
+    docker:
+        - image: rustlang/rust:nightly
+  rust-executor:
+    docker:
+        - image: rust:latest
+
+
+jobs:
+  check-fmt:
+    executor: rust-executor
+    steps:
+      - checkout
+      - run:
+          name: install rustfmt
+          command: rustup component add rustfmt
+      - run:
+          name: check formatting
+          command: cargo fmt -- --check
+  build-native:
+    executor: rust-nightly-executor
+    steps:
+      - checkout
+      - run:
+          name: build bot-dofus-orchestrator
+          command: cargo build
+  tests:
+    executor: rust-nightly-executor
+    steps:
+      - checkout
+      - run:
+          name: test bot-dofus-orchestrator
+          command: cargo test -- --test-threads=1
+workflows:
+  version: 2
+  build:
+    jobs:
+      - check-fmt
+      - build-native
+      - tests
