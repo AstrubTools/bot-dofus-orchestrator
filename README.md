@@ -1,8 +1,8 @@
 
 # bot-dofus-orchestrator
 
-[![Try it on gitpod](https://img.shields.io/badge/try-on%20gitpod-brightgreen.svg)](https://gitpod.io/#https://github.com/The-Tensox/bot-dofus-orchestrator)
-[![Build Status](https://img.shields.io/circleci/project/The-Tensox/bot-dofus-orchestrator/master.svg)](https://circleci.com/gh/The-Tensox/bot-dofus-orchestrator)
+[![Try it on gitpod](https://img.shields.io/badge/try-on%20gitpod-brightgreen.svg)](https://gitpod.io/#https://github.com/AstrubTools/bot-dofus-orchestrator)
+[![Build Status](https://img.shields.io/circleci/project/AstrubTools/bot-dofus-orchestrator/master.svg)](https://circleci.com/gh/AstrubTools/bot-dofus-orchestrator)
 
 - REST API to access bot-dofus-orchestrator data
 
