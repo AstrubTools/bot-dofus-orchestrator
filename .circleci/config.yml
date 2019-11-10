@@ -7,10 +7,6 @@ executors:
   rust-executor:
     docker:
         - image: rust:latest
-        environment:
-          MONGO_ADDR: localhost
-          DB_NAME: bot-dofus-orchestrator
-          MONGO_PORT: 27017
         - image: circleci/mongo:latest
 
 
@@ -39,6 +35,10 @@ jobs:
       - run:
           name: test bot-dofus-orchestrator
           command: cargo test -- --test-threads=1
+          environment:
+            MONGO_ADDR: localhost
+            DB_NAME: bot-dofus-orchestrator
+            MONGO_PORT: 27017
 workflows:
   version: 2
   build:
